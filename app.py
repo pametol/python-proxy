@@ -12,7 +12,6 @@ def proxy(path):
     if request.method == 'GET':
         resp = requests.get(f'{PROXY_SITE}{path}')
         headers = [(name, value) for name, value in resp.headers.items()]
-        print(headers)
         response = Response(resp.content, resp.status_code, headers)
 
         return response
